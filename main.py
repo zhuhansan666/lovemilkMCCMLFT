@@ -1,32 +1,45 @@
-import sys
-import ctypes
-
-from minecraft_cn_login_fix_tool.app.main_window import MainWindow
-
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QMessageBox, QWidget
-
-
-def is_admin():
-    return ctypes.windll.shell32.IsUserAnAdmin()
+# Minecraft China Mainland Login Fix Tools
+from lovemilkMCCMLFT.pages.login_hosts import LoginHostsUI
+from lovemilkMCCMLFT.pages.auth_hosts import AuthHostsUI
+from lovemilkMCCMLFT.database.manager import Manager
+from lovemilkMCCMLFT.database.ip import LOGIN, AUTHSERVER
+import version
+import flet as ft
 
 
-def main():
-    QApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    app = QApplication(sys.argv)
-    app.font().families().append("Microsoft YaHei UI")
-    main_app = MainWindow()
-    main_app.show()
-    app.exec_()
+def test(page: ft.Page):
+    page.title = f'Lovemilk Minecraft China Mainland Login Fix Tools V{version.VERSION_STRING}'
+    page.window_min_width = 768
+    page.window_min_height = 256
+    fonsts = {
+        'main': 'resources/opposans-cufonfonts/OPPOSansMedium.ttf',
+        'MiSansMedium': 'resources/MiSans/MiSans-Medium.ttf'
+    }
+
+    mgr = Manager()
+
+    page_name = 'login'
+
+    def switch_page(event):
+        nonlocal page_name
+
+        page.clean()
+        if page_name == 'login':
+            page_name = 'auth'
+            switch_page_button.text = f'切换到 启动器登录/皮肤下载 Hosts 页面'
+            AuthHostsUI(page, mgr, AUTHSERVER, [switch_page_button, ], fonsts, 'main')
+        elif page_name == 'auth':
+            page_name = 'login'
+            switch_page_button.text = f'切换到 验证服务器 Hosts 页面'
+            LoginHostsUI(page, mgr, LOGIN, [switch_page_button, ], fonsts, 'main')
+            page.update()
+    
+    switch_page_button = ft.ElevatedButton(
+        f'切换到 启动器登录/皮肤下载 页面',
+        on_click=switch_page
+    )
+
+    LoginHostsUI(page, mgr, LOGIN, [switch_page_button, ], fonsts, 'main')
 
 
-if __name__ == '__main__':
-    #if int(is_admin()) == 1:
-        sys.exit(main())
-    #else:
-    #    app = QApplication(sys.argv)
-    #    w = QWidget()
-    #    error_window = QMessageBox.critical(w, "警告", "请使用管理员身份运行！", QMessageBox.Yes)
-
+ft.app(target=test)
