@@ -6,7 +6,7 @@
 
 ## 如何使用
 * ### Windows 用户
-  1. 通过 [Releases](/../../releases) 下载最新发行版, 解压运行
+  1. 通过 [Releases](https://github.com/zhuhansan666/lovemilkMCCMLFT/releases) 下载最新发行版, 解压运行
   2. 打开软件后, 单击上方的延时测试
   3. 单击 下方表格中延时最小的一项左侧显示 IP 的按钮
   4. 享受畅快登录的快感
@@ -17,11 +17,11 @@
   如果显示 `git` 命令没有找到, 请先[安装 `git`](https://git-scm.com/)
   1. 如果 `git` 您不会安装, 可以单击界面右上角绿色的 `Code` 按钮, 选择 `Download ZIP` 后将下载下了的 zip 压缩包解压并安装所需库: 运行如下指令 `pip install -r requirements.txt` <br>
   (**如果下载过慢, 可以使用清华大学的 pypi 源**, 运行如下指令 `pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple`)
-  2. 注意: 建议您使用 venv 以获得干净的全局 Python 环境
-  3. 安装后, 使用 Python3.11 运行 `main.py`
-  4. 待 UI 窗口出现后, 单击上方的延时测试
-  5. 单击 下方表格中延时最小的一项左侧显示 IP 的按钮
-  6. 享受畅快登录的快感
+  1. 注意: 建议您使用 venv 以获得干净的全局 Python 环境
+  2. 安装后, 使用 Python3.11 运行 `main.py`
+  3. 待 UI 窗口出现后, 单击上方的延时测试
+  4. 单击 下方表格中延时最小的一项左侧显示 IP 的按钮
+  5. 享受畅快登录的快感
 
 ### 当你不想要这些之后可以点击 "删除已改 Hosts" 清理本软件添加的hosts
 
