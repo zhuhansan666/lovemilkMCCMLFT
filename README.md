@@ -25,5 +25,5 @@
 
 ### 当你不想要这些之后可以点击 "删除已改 Hosts" 清理本软件添加的hosts
 
-> [!NOTICE]
+> [!NOTE]
 > 温馨提示: 本软件支持向下兼容删除使用 `Minecraft CN Login Fix Tool` 所修改的 Hosts, 您可以无需在上述软件内清除 Hosts 后方可使用本软件
