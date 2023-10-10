@@ -7,7 +7,7 @@ import version
 import flet as ft
 
 
-def test(page: ft.Page):
+def main(page: ft.Page):
     page.title = f'Lovemilk Minecraft China Mainland Login Fix Tools V{version.VERSION_STRING}'
     page.window_min_width = 768
     page.window_min_height = 256
@@ -42,4 +42,4 @@ def test(page: ft.Page):
     LoginHostsUI(page, mgr, LOGIN, [switch_page_button, ], fonsts, 'main')
 
 
-ft.app(target=test)
+ft.app(target=main)
