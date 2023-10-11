@@ -188,8 +188,7 @@ class LoginHostsUI(UI):
 
         self.sort_login_listview()
 
-        # self.page.appbar.title = ft.Text('完成', color='teal')
-        self.page.appbar.title = None
+        self.page.appbar.title = ft.Text('启动器登录/皮肤下载 Hosts 修改')
         self.delay_test_button.disabled = False
         self.page.update()
 

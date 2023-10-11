@@ -9,8 +9,8 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = f'Lovemilk Minecraft China Mainland Login Fix Tools V{version.VERSION_STRING}'
-    page.window_min_width = 768
-    page.window_min_height = 256
+    page.window_min_width = 1024
+    page.window_min_height = 512
     fonsts = {
         'main': 'resources/opposans-cufonfonts/OPPOSansMedium.ttf',
         'MiSansMedium': 'resources/MiSans/MiSans-Medium.ttf'
