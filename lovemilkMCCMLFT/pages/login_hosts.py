@@ -37,7 +37,7 @@ class LoginHostsUI(UI):
             on_click=lambda event: self.mgr.open_hosts()
         )
         self.delete_hosts_button = ft.ElevatedButton(
-            '删除已改 Hosts',
+            '删除当前页面已改 Hosts',
             icon=ft.icons.DELETE_SWEEP_OUTLINED,
             on_click=self.delete_hosts,
         )
@@ -75,7 +75,7 @@ class LoginHostsUI(UI):
             ]
 
         page.appbar = ft.AppBar(
-            title=ft.Text(''),
+            title=ft.Text('启动器登录/皮肤下载 Hosts 修改'),
             actions=actions,
         )
 
@@ -167,7 +167,7 @@ class LoginHostsUI(UI):
         if not self.page.appbar:
             return
 
-        self.page.appbar.title = ft.Text('正在测试延时...', color='teal')
+        self.page.appbar.title = ft.Text('正在测试延时, 请等待请求完成自动排序...', color='teal')
         self.delay_test_button.disabled = True
         self.page.update()
 
