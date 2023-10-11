@@ -187,8 +187,7 @@ class AuthHostsUI(UI):
 
         self.sort_login_listview()
 
-        # self.page.appbar.title = ft.Text('完成', color='teal')
-        self.page.appbar.title = None
+        self.page.appbar.title = ft.Text('验证服务器 Hosts 修改')
         self.delay_test_button.disabled = False
         self.page.update()
 
