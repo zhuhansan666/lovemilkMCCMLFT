@@ -35,7 +35,7 @@ def main(page: ft.Page):
             page.update()
     
     switch_page_button = ft.ElevatedButton(
-        f'切换到 启动器登录/皮肤下载 页面',
+        f'切换到 验证服务器 Hosts 页面',
         on_click=switch_page
     )
 
