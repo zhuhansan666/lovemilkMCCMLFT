@@ -27,3 +27,6 @@
 
 > [!NOTE]
 > 温馨提示: 本软件支持向下兼容删除使用 `Minecraft CN Login Fix Tool` 所修改的 Hosts, 您可以无需在上述软件内清除 Hosts 后方可使用本软件
+
+## 已知 Bug
+1. 运行源码图标会显示 flet 默认图标
