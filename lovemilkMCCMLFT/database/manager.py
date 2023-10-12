@@ -28,7 +28,8 @@ class Manager:
             return
         
         # Linux and MacOS untested
-        os.popen(f'start {self.hosts_file}')
+        # Default use system default editor open in the new Konsole
+        os.popen(f'konsole -e "{os.getenv("EDITOR", "vim")} {self.hosts_file}"')
 
 
     def read(self):
