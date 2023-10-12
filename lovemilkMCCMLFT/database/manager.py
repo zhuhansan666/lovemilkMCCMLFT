@@ -36,7 +36,8 @@ class Manager:
             start_new_session=True,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
-            stdin=subprocess.DEVNULL
+            stdin=subprocess.DEVNULL,
+            shell=True
         )
 
 
