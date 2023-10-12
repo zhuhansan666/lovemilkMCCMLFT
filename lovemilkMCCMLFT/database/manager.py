@@ -1,5 +1,6 @@
 import os
 import sys
+import subprocess
 from pathlib import Path
 from typing import Literal
 
@@ -29,7 +30,14 @@ class Manager:
         
         # Linux and MacOS untested
         # Default use system default editor open in the new Konsole
-        os.popen(f'konsole -e "{os.getenv("EDITOR", "vim")} {self.hosts_file}"')
+        subprocess.Popen(
+            f'konsole -e "{os.getenv("EDITOR", "vim")} {self.hosts_file}"',
+            close_fds=True,
+            start_new_session=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            stdin=subprocess.DEVNULL
+        )
 
 
     def read(self):
