@@ -34,7 +34,7 @@ class LoginHostsUI(UI):
         self.open_hosts_button = ft.ElevatedButton(
             '打开 Hosts 文件',
             icon='FILE_OPEN',
-            on_click=lambda event: self.mgr.open_hosts()
+            on_click=self.open_hosts
         )
         self.delete_hosts_button = ft.ElevatedButton(
             '删除当前页面已改 Hosts',
@@ -84,6 +84,22 @@ class LoginHostsUI(UI):
 
         page.update()
         # self.delay_test(None)
+    
+    def open_hosts(self, event):
+        try:
+            self.mgr.open_hosts()
+        except Exception as e:
+            self.add_dialog(
+                ft.AlertDialog(
+                    modal=True,
+                    title=ft.Text('打开失败', color='error'),
+                    content=ft.Text(repr(e)),
+                    actions=[
+                        ft.TextButton('好的吧'),
+                    ],
+                    actions_alignment=ft.MainAxisAlignment.END,
+                )
+            )
 
     def init_login_listview(self, delays: dict[str, float] | None = None):
         delays = delays if delays is not None else {}

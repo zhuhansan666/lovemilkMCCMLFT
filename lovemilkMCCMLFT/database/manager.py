@@ -11,27 +11,30 @@ class Manager:
     """
 
     def __init__(self, encoding: str | None = 'ascii', suffix: str = '# lovemilkMCCMLFT') -> None:
+        """
+        @parma suffix must start with "#"
+        """
         self.encoding = encoding
         self.suffix = suffix
 
     @property
     def hosts_file(self) -> Path:
         return (
-            Path(os.getenv('windir', 'C:/Windows')) /
-            'System32/drivers/etc/hosts'
+            Path(os.getenv('windir', 'C:/Windows')) / 'System32/drivers/etc/hosts'
             if sys.platform == 'win32' else
             Path('/etc/hosts')
         )
     
     def open_hosts(self):
+        command = f'konsole -e "{os.getenv("EDITOR", "vim")} {self.hosts_file}"'  # *nix / MacOS
+
         if sys.platform == 'win32':
-            os.popen(f'start {self.hosts_file}')
-            return
-        
-        # Linux and MacOS untested
+            command = f'start {self.hosts_file}'
+
+        # *nix and MacOS untested
         # Default use system default editor open in the new Konsole
         subprocess.Popen(
-            f'konsole -e "{os.getenv("EDITOR", "vim")} {self.hosts_file}"',
+            command,
             close_fds=True,
             start_new_session=True,
             stdout=subprocess.DEVNULL,
