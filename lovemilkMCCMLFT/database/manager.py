@@ -10,7 +10,7 @@ class Manager:
     You can use mgr.write(<sth>).delete().write(<sth>)...
     """
 
-    def __init__(self, encoding: str | None = 'ascii', suffix: str = '# lovemilkMCCMLFT') -> None:
+    def __init__(self, encoding: str | None = 'u8', suffix: str = '# lovemilkMCCMLFT') -> None:
         """
         @parma suffix must start with "#"
         """

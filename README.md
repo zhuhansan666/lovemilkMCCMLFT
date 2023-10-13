@@ -10,6 +10,7 @@
   2. 打开软件后, 单击上方的延时测试
   3. 单击 下方表格中延时最小的一项左侧显示 IP 的按钮
   4. 享受畅快登录的快感
+  > 通过用户反馈和我的测试, Windows 资源管理器 自带的 ZIP 解压缩始终无法解压压缩包, 请使用 [bandizip](https://www.bandisoft.com/bandizip/) 或 [7zip](https://www.7-zip.org/) 解压, 感谢理解.
 * ### Linux 用户(需要 root 权限) / MacOS 用户(未经测试)
   > 如果您是 Linux 或 MacOS 用户, 我们默认您已经掌握了如何安装 Python3.11 和 git
   1. 安装 [Python3.11](https://www.python.org/downloads/release/python-311/)
