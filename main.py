@@ -1,4 +1,4 @@
-# Minecraft China Mainland Login Fix Tools
+# Minecraft Chinese Mainland Login Fix Tools
 from lovemilkMCCMLFT.pages.login_hosts import LoginHostsUI
 from lovemilkMCCMLFT.pages.auth_hosts import AuthHostsUI
 from lovemilkMCCMLFT.database.manager import Manager
@@ -8,7 +8,7 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    page.title = f'Lovemilk Minecraft China Mainland Login Fix Tools V{version.VERSION_STRING}'
+    page.title = f'Lovemilk Minecraft Chinese Mainland Login Fix Tools V{version.VERSION_STRING}'
     page.window_min_width = 1024
     page.window_min_height = 512
     fonsts = {

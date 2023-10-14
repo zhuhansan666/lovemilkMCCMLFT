@@ -1,4 +1,4 @@
-# Lovemilk Minecraft China Mainland Login Fix Tools
+# Lovemilk Minecraft Chinese Mainland Login Fix Tools
 * 从 [Minecraft CN Login Fix Tool](https://github.com/SkyDynamic/MinecraftCNLoginFixTool) 重构 UI 而来, 与原作者无关 <br>
 ~~实际上就用了下 ip_data.py, 参考了下 UI, 其他全部重写(xd~~
 * 一个基于修改 Hosts 让中国大陆用户登录 Minecraft 国际版(Java / 基岩) 不再困难的软件

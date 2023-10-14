@@ -4,6 +4,7 @@ import asyncio
 from typing import Any
 
 from . import UI
+from .shared import format_error
 from ..database.manager import Manager
 from ..types import IPDict
 
@@ -92,7 +93,7 @@ class AuthHostsUI(UI):
                 ft.AlertDialog(
                     modal=True,
                     title=ft.Text('打开失败', color='error'),
-                    content=ft.Text(repr(e)),
+                    content=ft.Text(format_error(e)),
                     actions=[
                         ft.TextButton('好的吧'),
                     ],
@@ -249,7 +250,7 @@ class AuthHostsUI(UI):
                 ft.AlertDialog(
                     modal=True,
                     title=ft.Text('替换失败', color='error'),
-                    content=ft.Text(repr(e)),
+                    content=ft.Text(format_error(e)),
                     actions=[
                         ft.TextButton('好的吧'),
                     ],
@@ -293,7 +294,7 @@ class AuthHostsUI(UI):
                 ft.AlertDialog(
                     modal=True,
                     title=ft.Text('删除失败', color='error'),
-                    content=ft.Text(repr(e)),
+                    content=ft.Text(format_error(e)),
                     actions=[
                         ft.TextButton('好的吧'),
                     ],
