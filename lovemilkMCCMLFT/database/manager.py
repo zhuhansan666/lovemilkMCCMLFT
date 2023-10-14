@@ -1,5 +1,7 @@
 import os
 import sys
+if sys.platform == 'win32':
+    import winreg
 import subprocess
 from pathlib import Path
 from typing import Literal
@@ -24,12 +26,21 @@ class Manager:
             if sys.platform == 'win32' else
             Path('/etc/hosts')
         )
-    
+
+    if sys.platform == 'win32':
+        def default_open_with(self, suffix: str):
+            return ''  # disabled
+            suffix = f'.{suffix}' if not suffix.startswith('.') else suffix
+
+            with winreg.OpenKey(winreg.HKEY_CLASSES_ROOT, suffix) as key:
+                value, _ = winreg.QueryValueEx(key, "Content Type")
+                return value if Path(value).is_file() else (Path(os.getenv('windir', 'C:/Windows')) / 'notepad')
+
     def open_hosts(self):
         command = f'konsole -e "{os.getenv("EDITOR", "vim")} {self.hosts_file}"'  # *nix / MacOS
 
         if sys.platform == 'win32':
-            command = f'start {self.hosts_file}'
+            command = f'start {self.default_open_with(".txt")} {self.hosts_file}'
 
         # *nix and MacOS untested
         # Default use system default editor open in the new Konsole
